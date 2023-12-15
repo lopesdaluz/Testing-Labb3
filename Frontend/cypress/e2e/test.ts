@@ -8,7 +8,7 @@ import {
 Before(() => {
   cy.visit("http://localhost:5173/");
 });
-
+Given("Jag är på hemsidan och ser en huvudrubrik", () => {});
 Given("Jag är på hemsidan och ser en meny av kort", () => {});
 
 When("Jag klickar på ett kort", () => {
