@@ -1,8 +1,9 @@
-import Test from '../components/Test';
-import '../Styles/Home.css'
+import Test from "../components/Test";
+import "../Styles/Home.css";
+
 const Home = () => {
   return (
-    <div className='container'>
+    <div className="container">
       <Test />
     </div>
   );
