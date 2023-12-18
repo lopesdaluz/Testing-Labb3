@@ -19,3 +19,45 @@
   border-radius: 50%;
   border: 2px solid #333;
 }
+
+.Title {
+  margin: 0; 
+}
+
+.Subtitle {
+  margin: 0;
+}
+
+
+.menu-icon {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 24px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.menu-icon div {
+  width: 30px;
+  height: 4px;
+  background-color: #333; /* Adjust the color as needed */
+  border-radius: 2px;
+  transition: background-color 0.3s;
+}
+
+.menu-icon.open div:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu-icon.open div:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-icon.open div:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
