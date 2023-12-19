@@ -1,5 +1,4 @@
 import "../Styles/Test.css";
-import { Hamburger } from "./Hamburger";
 
 const Test = () => {
   // function handleMenu(e: React.MouseEvent) {
@@ -11,16 +10,14 @@ const Test = () => {
   return (
     <>
       <div id="menu">
-        <Hamburger />
-        <h1>Rubrik, hamburgarmeny och hjärta icon</h1>
-        <div className="card">
+        <div className="card" id="card1">
           <div>
             <h4 className="Title">För Honom</h4>
             <h6 className="Subtitle">
               Överraska honom med en personlig present
             </h6>
           </div>
-          <div className="imageCard"></div>
+          <div className="imageCard" id="card2"></div>
         </div>
         <div className="card">
           <div>
@@ -29,14 +26,14 @@ const Test = () => {
           </div>
           <div className="imageCard"></div>
         </div>
-        <div className="card">
+        <div className="card" id="card3">
           <div>
             <h4 className="Title">För Barn</h4>
             <h6 className="Subtitle">Vi har listat de bästa presenterna</h6>
           </div>
           <div className="imageCard"></div>
         </div>
-        <div className="card">
+        <div className="card" id="card4">
           <div>
             <h4 className="Title">För Baby</h4>
             <h6 className="Subtitle">

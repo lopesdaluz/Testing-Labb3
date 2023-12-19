@@ -1,4 +1,10 @@
-
+.header{
+  display: flex;
+  flex-direction: row;
+}
+#menu-Title{
+  font-weight: bold;
+}
 .hamburger-bar {
   width: 30px;
   height: 4px;
@@ -14,11 +20,11 @@ background-color: black;
 .bar2 {
   border: 0px solid #333;
   background-color: black; 
-  transform:  translateY(20%) ;
+  transform:  translateY(10%) ;
 }
 
 .bar3 {
   border: 0px solid #333;
   background-color: black; 
-  transform: translateY(30%);
+  transform: translateY(10%);
 }
