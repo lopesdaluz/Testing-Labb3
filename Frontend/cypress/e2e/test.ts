@@ -8,11 +8,10 @@ import {
 Before(() => {
   cy.visit("http://localhost:5173/");
 });
-Given("Jag är på hemsidan och ser en huvudrubrik", () => {});
+
 Given("Jag är på hemsidan och ser en meny av kort", () => {});
 
 When("Jag klickar på ett kort", () => {
-  // cy.get(".card").first().click();
   cy.get("#card1").click();
   // cy.get("#card2").click();
   // cy.get("#card3").click();
@@ -20,5 +19,8 @@ When("Jag klickar på ett kort", () => {
 });
 
 Then("Man hamnar på en ny sida med produkter", () => {
-  cy.get("#title").should("contain", "För Honom"); //räcker med en rubrik från den nya sidan. typ hämta en text från den nya sidan
+  cy.get("#card1").should("contain", "För Honom"); //räcker med en rubrik från den nya sidan. typ hämta en text från den nya sidan
+  // cy.get("#card2").should("contain", "För Henne"); //räcker med en rubrik från den nya sidan. typ hämta en text från den nya sidan
+  // cy.get("#card3").should("contain", "För Barn"); //räcker med en rubrik från den nya sidan. typ hämta en text från den nya sidan
+  // cy.get("#card4").should("contain", "För Baby"); //räcker med en rubrik från den nya sidan. typ hämta en text från den nya sidan
 });

@@ -2,6 +2,7 @@
   "compilerOptions": {
     "jsx": "preserve",
     // "types": ["@fortawesome/react-fontawesome"]
+   
   },
   "include": ["**/*.ts", "**/*.tsx"],
  

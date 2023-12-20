@@ -5,7 +5,6 @@ import { Hamburger } from "../components/Hamburger";
 const Home = () => {
   return (
     <div className="container">
-      <Hamburger />
       <Test />
     </div>
   );

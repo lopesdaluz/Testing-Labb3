@@ -1,13 +1,52 @@
 // import React from "react";
 import Home from "./Pages/Home";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Gift from "./Pages/Gift";
+import Test from "../src/components/Test";
+import Header from "../src/components/Header";
+import Footer from "../src/components/Footer";
+import {
+  createBrowserRouter,
+  Router,
+  Route,
+  Link,
+  RouterProvider,
+  Outlet,
+} from "react-router-dom";
 
-function App() {
+// function App() {
+//   return (
+//     <div>
+//       <Home />
+//     </div>
+//   );
+// }
+
+// export default App;
+function Root() {
   return (
     <div>
-      <Home />
+      <Header />
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
     </div>
   );
+}
+function App() {
+  const router = createBrowserRouter([
+    {
+      children: [
+        { element: <Home />, path: "/" },
+        { element: <Gift />, path: "/Gift/:cardId" },
+        { element: <Test />, path: "/Test" },
+      ],
+
+      element: <Root />,
+    },
+  ]);
+
+  return <RouterProvider router={router} />;
 }
 
 export default App;
