@@ -38,7 +38,7 @@ function App() {
     {
       children: [
         { element: <Home />, path: "/" },
-        { element: <Gift />, path: "/Gift/:cardId" },
+        { element: <Gift />, path: "/gift/:cardId" },
         { element: <Test />, path: "/Test" },
       ],
 

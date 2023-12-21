@@ -19,7 +19,7 @@ When("Jag klickar på ett kort", () => {
 });
 
 Then("Man hamnar på en ny sida med produkter", () => {
-  cy.get("#card1").should("contain", "För Honom"); //räcker med en rubrik från den nya sidan. typ hämta en text från den nya sidan
+  cy.get("h1").should("contain", "För honom"); //räcker med en rubrik från den nya sidan. typ hämta en text från den nya sidan
   // cy.get("#card2").should("contain", "För Henne"); //räcker med en rubrik från den nya sidan. typ hämta en text från den nya sidan
   // cy.get("#card3").should("contain", "För Barn"); //räcker med en rubrik från den nya sidan. typ hämta en text från den nya sidan
   // cy.get("#card4").should("contain", "För Baby"); //räcker med en rubrik från den nya sidan. typ hämta en text från den nya sidan
