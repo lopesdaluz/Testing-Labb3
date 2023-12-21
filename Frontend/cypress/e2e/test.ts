@@ -24,3 +24,13 @@ Then("Man hamnar på en ny sida med produkter", () => {
   // cy.get("#card3").should("contain", "För Barn"); //räcker med en rubrik från den nya sidan. typ hämta en text från den nya sidan
   // cy.get("#card4").should("contain", "För Baby"); //räcker med en rubrik från den nya sidan. typ hämta en text från den nya sidan
 });
+
+Given("Det finns en hamburgar meny", () => {});
+
+When("Jag klickar på den", () => {
+  cy.get(".hamburger-button").click();
+});
+
+Then("Menyn visar alternativ", () => {
+  cy.get("li").should("contain", "Home");
+});

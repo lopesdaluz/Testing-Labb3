@@ -10,6 +10,12 @@ Then beskriver det förväntade resultatet. Det får finnas flera Then-klausuler
   When Jag klickar på ett kort
   Then Man hamnar på en ny sida med produkter
 
+  
+Scenario: hamburgarmeny klick
+  Given Det finns en hamburgar meny
+  When Jag klickar på den
+  Then Menyn visar alternativ
+
 
 
 
