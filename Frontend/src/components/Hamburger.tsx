@@ -1,6 +1,7 @@
 // import react from "react";
 import "../Styles/Hamburger.css";
 import Ham from "../assets/bars-solid-1.svg";
+import { useState } from "react";
 
 // export interface HamburgerProps {
 //   isInitiallyOpen?: boolean;
@@ -9,26 +10,36 @@ import Ham from "../assets/bars-solid-1.svg";
 export function Hamburger() {
   /*props: HamburgerProps*/
 
-  // const { isInitiallyOpen } = props;
-  // const [isOpen, setIsOpen] = useState<boolean>(isInitiallyOpen ?? false);
+  const { isInitiallyOpen } = useState<Boolean>(false); //props;
+  const [isOpen, setIsOpen] = useState<boolean>(isInitiallyOpen || false);
 
   const handleClick = () => {
     //om jag ska glömma den eller om den ska visas
-    // setIsOpen((prev) => !prev);
-    console.log("hamburger-button clicked", handleClick);
+
+    // if(isOpen === true){setIsOpen(false)}
+    // else{setIsOpen(true)}
+
+    setIsOpen(!isOpen);
+    console.log("hamburger-button clicked" + isOpen, handleClick);
   };
 
   return (
-    <main className="header-Hamburgare">
-      <div onClick={handleClick} className="hamburger-button">
-        <img src={Ham} alt="navigation-Icon"></img>
+    <main className="header-hamburgare">
+      <div onClick={handleClick} className={isOpen ? "hamburger-button" : ""}>
+        <img src={Ham} alt="navigation-con"></img>
+
+        {isOpen && (
+          <nav className="menu-list">
+            <ul>
+              <li>Home</li>
+              <li>Him</li>
+              <li>Her</li>
+              <li>Toodler</li>
+              <li>Baby</li>
+            </ul>
+          </nav>
+        )}
       </div>
-      <nav>
-        {/* <ul>
-          <li>Home</li>
-          <li>Gift</li>
-        </ul> */}
-      </nav>
     </main>
   );
 }

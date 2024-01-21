@@ -1,11 +1,11 @@
-import Test from "../components/Test";
+import StartPage from "../components/StartPage";
 import "../Styles/Home.css";
 import { Hamburger } from "../components/Hamburger";
 
 const Home = () => {
   return (
     <div className="container">
-      <Test />
+      <StartPage />
     </div>
   );
 };

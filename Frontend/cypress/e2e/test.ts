@@ -28,7 +28,7 @@ Then("Man hamnar på en ny sida med produkter", () => {
 Given("Det finns en hamburgar meny", () => {});
 
 When("Jag klickar på den", () => {
-  cy.get(".hamburger-button").click();
+  cy.get(".header-hamburgare").click();
 });
 
 Then("Menyn visar alternativ", () => {
