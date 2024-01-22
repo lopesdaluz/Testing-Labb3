@@ -15,7 +15,7 @@ const StartPage = () => {
     <>
       <div id="main-menu">
         <p>Make them smile with a unique gift</p>
-        <div className="card" id="card1" onClick={() => handleMenu("card1")}>
+        <div className="card" id="Him" onClick={() => handleMenu("Him")}>
           <div>
             <h4 className="Title">For Him</h4>
             <h6 className="Subtitle">
@@ -26,7 +26,7 @@ const StartPage = () => {
             <img src={logo} alt="Gift Icon" />
           </div>
         </div>
-        <div className="card" id="card2" onClick={() => handleMenu("card2")}>
+        <div className="card" id="Her" onClick={() => handleMenu("Her")}>
           <div>
             <h4 className="Title">For Her</h4>
             <h6 className="Subtitle">Populära presenter till henne</h6>
@@ -35,7 +35,11 @@ const StartPage = () => {
             <img src={logo} alt="Gift Icon" />
           </div>
         </div>
-        <div className="card" id="card3" onClick={() => handleMenu("card3")}>
+        <div
+          className="card"
+          id="Toddler"
+          onClick={() => handleMenu("Toddler")}
+        >
           <div>
             <h4 className="Title">For Toodler</h4>
             <h6 className="Subtitle">Vi har listat de bästa presenterna</h6>
@@ -44,7 +48,7 @@ const StartPage = () => {
             <img src={logo} alt="Gift Icon" />
           </div>
         </div>
-        <div className="card" id="card4" onClick={() => handleMenu("card4")}>
+        <div className="card" id="Baby" onClick={() => handleMenu("Baby")}>
           <div>
             <h4 className="Title">For Baby</h4>
             <h6 className="Subtitle">
