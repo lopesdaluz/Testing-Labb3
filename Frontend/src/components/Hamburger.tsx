@@ -2,6 +2,7 @@
 import "../Styles/Hamburger.css";
 import Ham from "../assets/bars-solid-1.svg";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 // export interface HamburgerProps {
 //   isInitiallyOpen?: boolean;
@@ -25,21 +26,34 @@ export function Hamburger() {
 
   return (
     <main className="header-hamburgare">
-      <div onClick={handleClick} className={isOpen ? "hamburger-button" : ""}>
-        <img src={Ham} alt="navigation-con"></img>
+      <img
+        src={Ham}
+        alt="navigation-con"
+        onClick={handleClick}
+        className={isOpen ? "hamburger-button" : ""}
+      />
 
-        {isOpen && (
-          <nav className="menu-list">
-            <ul>
-              <li>Home</li>
-              <li>Him</li>
-              <li>Her</li>
-              <li>Toodler</li>
-              <li>Baby</li>
-            </ul>
-          </nav>
-        )}
-      </div>
+      {isOpen && (
+        <nav className="menu-list">
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/gift/card1">Him</Link>
+            </li>
+            <li>
+              <Link to="/gift/card2">Her</Link>
+            </li>
+            <li>
+              <Link to="/gift/card3">Toddler</Link>
+            </li>
+            <li>
+              <Link to="/gift/card4">Baby</Link>
+            </li>
+          </ul>
+        </nav>
+      )}
     </main>
   );
 }
