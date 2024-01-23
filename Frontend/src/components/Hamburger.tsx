@@ -11,8 +11,7 @@ import { Link } from "react-router-dom";
 export function Hamburger() {
   /*props: HamburgerProps*/
 
-  const { isInitiallyOpen } = useState<Boolean>(false); //props;
-  const [isOpen, setIsOpen] = useState<boolean>(isInitiallyOpen || false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const handleClick = () => {
     //om jag ska glömma den eller om den ska visas
@@ -26,15 +25,10 @@ export function Hamburger() {
 
   return (
     <main className="header-hamburgare">
-      <img
-        src={Ham}
-        alt="navigation-con"
-        onClick={handleClick}
-        className={isOpen ? "hamburger-button" : ""}
-      />
+      <img src={Ham} alt="navigation-con" onClick={handleClick} />
 
       {isOpen && (
-        <nav className="menu-list">
+        <nav className={isOpen ? "hamburger-button" : ""}>
           <ul>
             <li>
               <Link to="/">Home</Link>

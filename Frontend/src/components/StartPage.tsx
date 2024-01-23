@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import "../Styles/Test.css";
+import "../Styles/StartPage.css";
 import logo from "../assets/gift-solid.svg";
 
 const StartPage = () => {

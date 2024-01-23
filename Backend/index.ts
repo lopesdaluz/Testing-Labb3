@@ -15,6 +15,12 @@ const app = express();
 
 app.use(cors());
 
+app.get("/", async (_request, response) => {
+  const { rows } = await client.query("SELECT * FROM products");
+
+  response.send(rows);
+});
+
 // app.get("/", async (_request, response) => {
 //   // Property 'queryy' does not exist on type 'Client'. Did you mean 'query'?
 //   const { rows } = await client.queryy("SELECT * FROM cities WHERE name = $1", [
