@@ -11,7 +11,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/gift/:cardName" element={<Gift />} />
+        <Route path="/gift" element={<Gift />} />
       </Routes>
       <Footer />
     </BrowserRouter>

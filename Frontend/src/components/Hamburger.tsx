@@ -4,23 +4,15 @@ import Ham from "../assets/bars-solid-1.svg";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-// export interface HamburgerProps {
-//   isInitiallyOpen?: boolean;
-// }
-
 export function Hamburger() {
-  /*props: HamburgerProps*/
-
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const handleClick = () => {
-    //om jag ska glömma den eller om den ska visas
-
-    // if(isOpen === true){setIsOpen(false)}
-    // else{setIsOpen(true)}
-
     setIsOpen(!isOpen);
-    console.log("hamburger-button clicked" + isOpen, handleClick);
+  };
+
+  const closeMenu = () => {
+    setIsOpen(false);
   };
 
   return (
@@ -31,19 +23,29 @@ export function Hamburger() {
         <nav className={isOpen ? "hamburger-button" : ""}>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/" onClick={closeMenu}>
+                Home
+              </Link>
             </li>
             <li>
-              <Link to="/gift/card1">Him</Link>
+              <Link to="/gift/Him" onClick={closeMenu}>
+                Him
+              </Link>
             </li>
             <li>
-              <Link to="/gift/card2">Her</Link>
+              <Link to="/gift/Her" onClick={closeMenu}>
+                Her
+              </Link>
             </li>
             <li>
-              <Link to="/gift/card3">Toddler</Link>
+              <Link to="/gift/Toddler" onClick={closeMenu}>
+                Toddler
+              </Link>
             </li>
             <li>
-              <Link to="/gift/card4">Baby</Link>
+              <Link to="/gift/Baby" onClick={closeMenu}>
+                Baby
+              </Link>
             </li>
           </ul>
         </nav>
@@ -51,4 +53,5 @@ export function Hamburger() {
     </main>
   );
 }
+
 export default Hamburger;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "../Styles/Gift.css";
 
@@ -11,14 +11,26 @@ interface GiftProps {
 const Gift: React.FC<GiftProps> = ({ children }) => {
   const { cardName } = useParams<{ cardName?: CardId }>();
   console.log("Card Name:", cardName);
+  const [productlist, setproductlist] = useState([]);
 
-  //fetcha här. Gör ett anrop mot mitt backend
-  //axios
-  //function getInteractions(): Promise<Response> {
-  // return axios.get("localhost:3000/products")
-  // .then((res) => res.data)
-  // .catch(err => err.message)
-  // }
+  useEffect(() => {
+    getProduct();
+    console.log(productlist);
+  }, []);
+
+  type ProductResponse = {
+    data: data;
+  };
+
+  async function getProduct(): Promise<ProductResponse> {
+    try {
+      let products = await fetch("http://localhost:3000/products");
+      setproductlist(products);
+      console.log(products);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   // array of titles objects:
   const titleMapping: Record<CardId, string> = {
