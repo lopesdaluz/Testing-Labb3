@@ -2,17 +2,16 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "../Styles/Gift.css";
 
-type CardId = "Him" | "Her" | "Toddler" | "Baby";
+type CardId = "Men" | "Women" | "Children" | "Baby";
 
-interface GiftProps {
-  children?: React.ReactNode;
-}
+// interface GiftProps {
+//   children?: React.ReactNode;
+// }
 
-const Gift: React.FC<GiftProps> = ({ children }) => {
-  const { cardName } = useParams<{ cardName: CardId }>();
+const Gift = () => {
+  const cardName = useParams<{ id: CardId }>();
   console.log("Card Name:", cardName);
   const [productlist, setproductlist] = useState([]);
-  const [sortedProducts, setSortedProducts] = useState([]);
 
   useEffect(() => {
     getProduct();
@@ -34,17 +33,17 @@ const Gift: React.FC<GiftProps> = ({ children }) => {
     try {
       let response = await fetch("http://localhost:3000/products");
       let data = await response.json();
-      setproductlist(data);
+      // setproductlist(data);
 
       //göra  en filtrering här med variabel 'SortedProducts'
 
-      const filteredProducts = data.filter(
-        (product) => product.category === cardName
+      const filteredProducts = await data.filter(
+        (product: product) => product.category === cardName.id
       );
-      setSortedProducts(filteredProducts);
+      setproductlist(filteredProducts);
       console.log("The product list", productlist);
       console.log("The card names:", cardName);
-      console.log("The filtered Products:", sortedProducts);
+      // console.log("The filtered Products:", sortedProducts);
 
       console.log(data);
       return { data };
@@ -54,24 +53,11 @@ const Gift: React.FC<GiftProps> = ({ children }) => {
     }
   }
 
-  // array of titles objects:
-  const titleMapping: Record<CardId, string> = {
-    Him: "For Him",
-    Her: "For Her",
-    Toddler: "For Toddler",
-    Baby: "For Baby",
-  };
-
-  // Get the title based on the cardName
-  const title = cardName
-    ? titleMapping[cardName] || "Unknown Title"
-    : "Unknown Title";
-
   return (
     <div>
-      <h1>{title}</h1>
+      <h1>For {cardName.id}</h1>
       <div className="product-list">
-        {sortedProducts.map((product) => (
+        {productlist.map((product: product) => (
           <div key={product.id} className="product-item">
             <img src={product.img_url} alt={product.name} />
             <h3>{product.name}</h3>
@@ -80,7 +66,6 @@ const Gift: React.FC<GiftProps> = ({ children }) => {
           </div>
         ))}
       </div>
-      {children}
     </div>
   );
 };

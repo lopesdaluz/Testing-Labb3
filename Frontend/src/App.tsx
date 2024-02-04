@@ -11,7 +11,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/gift" element={<Gift />} />
+        <Route path="/gift/:id" element={<Gift />} />
       </Routes>
       <Footer />
     </BrowserRouter>

@@ -15,7 +15,7 @@ const StartPage = () => {
     <>
       <div id="main-menu">
         <p>Make them smile with a unique gift</p>
-        <div className="card" id="Him" onClick={() => handleMenu("Him")}>
+        <div className="card" id="Him" onClick={() => handleMenu("Men")}>
           <div>
             <h4 className="Title">For Him</h4>
             <h6 className="Subtitle">
@@ -26,7 +26,7 @@ const StartPage = () => {
             <img src={logo} alt="Gift Icon" />
           </div>
         </div>
-        <div className="card" id="Her" onClick={() => handleMenu("Her")}>
+        <div className="card" id="Her" onClick={() => handleMenu("Women")}>
           <div>
             <h4 className="Title">For Her</h4>
             <h6 className="Subtitle">Populära presenter till henne</h6>
@@ -38,7 +38,7 @@ const StartPage = () => {
         <div
           className="card"
           id="Toddler"
-          onClick={() => handleMenu("Toddler")}
+          onClick={() => handleMenu("Children")}
         >
           <div>
             <h4 className="Title">For Toodler</h4>

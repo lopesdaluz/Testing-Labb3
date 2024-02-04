@@ -28,18 +28,18 @@ export function Hamburger() {
               </Link>
             </li>
             <li>
-              <Link to="/gift/Him" onClick={closeMenu}>
+              <Link to="/gift/Men" onClick={closeMenu}>
                 Him
               </Link>
             </li>
             <li>
-              <Link to="/gift/Her" onClick={closeMenu}>
+              <Link to="/gift/Women" onClick={closeMenu}>
                 Her
               </Link>
             </li>
             <li>
-              <Link to="/gift/Toddler" onClick={closeMenu}>
-                Toddler
+              <Link to="/gift/Children" onClick={closeMenu}>
+                Children
               </Link>
             </li>
             <li>
