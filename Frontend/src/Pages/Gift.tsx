@@ -31,8 +31,8 @@ const Gift = () => {
 
   async function getProduct(): Promise<ProductResponse> {
     try {
-      let response = await fetch("http://localhost:3000/products");
-      let data = await response.json();
+      const response = await fetch("http://localhost:3000/products");
+      const data = await response.json();
       // setproductlist(data);
 
       //göra  en filtrering här med variabel 'SortedProducts'

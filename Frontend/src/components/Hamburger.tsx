@@ -29,12 +29,12 @@ export function Hamburger() {
             </li>
             <li>
               <Link to="/gift/Men" onClick={closeMenu}>
-                Him
+                Men
               </Link>
             </li>
             <li>
               <Link to="/gift/Women" onClick={closeMenu}>
-                Her
+                Women
               </Link>
             </li>
             <li>
